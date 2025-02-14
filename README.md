@@ -67,7 +67,7 @@ Contributions are welcome! If you'd like to contribute, please follow these step
 
 1. **Fork the repository**:
    ```bash
-    git clone https://github.com/A-A7med-i/Brain-Tumor-Detection.git
+    git clone https://github.com/A-A7med-i/DL-E2E.git
     cd brain-tumor-classification
     ```
 2. **Create a new branch for your feature or bugfix**:
