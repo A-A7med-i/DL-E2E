@@ -1,0 +1,5 @@
+*.idea
+DL-E2E
+*.vscode
+*.egg-info
+*__pycache__
