@@ -1,0 +1,5 @@
+data:
+  path:
+    benign: "/media/ahmed/Data/dl-project1/data/raw/benign"
+    malignant: "/media/ahmed/Data/dl-project1/data/raw/malignant"
+    processed: "/media/ahmed/Data/dl-project1/data/processed"
