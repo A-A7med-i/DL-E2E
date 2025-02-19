@@ -1,0 +1,5 @@
+data:
+  path:
+    benign: "/media/ahmed/Data/DL-E2E/Breast-Cancer/data/raw/benign"
+    malignant: "/media/ahmed/Data/DL-E2E/Breast-Cancer/data/raw/malignant"
+    processed: "/media/ahmed/Data/DL-E2E/Breast-Cancer/data/processed"
