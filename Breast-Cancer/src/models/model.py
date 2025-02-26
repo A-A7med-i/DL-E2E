@@ -1,7 +1,7 @@
 from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Activation, Input
 from tensorflow.keras.callbacks import EarlyStopping
 from tensorflow.keras.applications import ResNet50
-from typing import Tuple, Dict, Optional, List
+from typing import Tuple, Dict
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import numpy as np
@@ -13,8 +13,6 @@ class ImageClassifier:
 
     Attributes:
         input_shape (Tuple[int, int, int]): Input shape of images (height, width, channels)
-        backbone (tf.keras.Model): Feature extraction backbone model
-        model (tf.keras.Model): Complete classification model
     """
 
     def __init__(self, input_shape: Tuple[int, int, int] = (224, 224, 3)) -> None:
