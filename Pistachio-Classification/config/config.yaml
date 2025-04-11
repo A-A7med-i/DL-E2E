@@ -1,0 +1,5 @@
+data:
+  path:
+    kirmizi: "/media/ahmed/Data/DL-E2E/Pistachio-Classification/data/raw/Kirmizi_Pistachio"
+
+    siirt: "/media/ahmed/Data/DL-E2E/Pistachio-Classification/data/raw/Siirt_Pistachio"
