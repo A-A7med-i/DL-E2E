@@ -1,5 +1,7 @@
 from pathlib import Path
+
 import yaml
+
 
 def load_yaml(path):
 	"""
@@ -16,7 +18,8 @@ def load_yaml(path):
 	"""
 	path = Path(path)
 
-	if not path.exists():
+	try:
+		with path.open("r") as file:
+			return yaml.safe_load(file)
+	except FileNotFoundError:
 		raise FileNotFoundError(f"Config file not found at: {path}")
-
-	return yaml.safe_load(path)
