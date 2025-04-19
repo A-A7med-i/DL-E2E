@@ -1,7 +1,7 @@
-import random
-from typing import List, Tuple
+from typing import List, Tuple, Iterable, Optional, Any
 import matplotlib.pyplot as plt
 import numpy as np
+import random
 
 
 def plot_random_images(
@@ -69,4 +69,50 @@ def plot_random_images(
         plt.savefig(save_path)
 
     plt.tight_layout()
+    plt.show()
+
+
+def plot_label_distribution(
+    data: Iterable[Tuple[Any, int]],
+    title: Optional[str] = None,
+    save_path: Optional[str] = None,
+) -> None:
+    """
+    Plot the distribution of binary labels in a pie chart.
+
+    Args:
+        data: Iterable of (image, label) pairs where labels are 0 or 1
+        title: Title for the plot (default: "Distribution of Labels")
+        save_path: Optional path to save the figure (default: None, doesn't save)
+    """
+    label_sirt = sum(la for _, la in data)
+    label_kirmizi = len(data) - label_sirt
+
+    counts = [label_kirmizi, label_sirt]
+    label_names = ["Kirmizi", "Sirt"]
+
+    plt.figure(figsize=(10, 10))
+    plt.pie(
+        counts,
+        labels=label_names,
+        autopct="%1.1f%%",
+        startangle=90,
+        explode=(0.05, 0.05),
+        shadow=True,
+        colors=["#3498db", "#e74c3c"],
+    )
+
+    plt.title(title or "Distribution of Labels", fontsize=16)
+    plt.legend(
+        [f"{label_names[0]} (n={label_kirmizi})", f"{label_names[1]} (n={label_sirt})"],
+        loc="best",
+        frameon=True,
+        framealpha=0.9,
+    )
+
+    plt.tight_layout()
+
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches="tight")
+
     plt.show()
