@@ -75,3 +75,38 @@ class ImageProcessor:
 		except Exception as e:
 			print(f"Error processing image: {e}")
 			return image_label
+
+	def split_data(self, dataset: List[Tuple[np.ndarray, Any]]) -> Tuple[
+		np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+		"""
+		Split the dataset into training and testing sets with stratification.
+
+		This method extracts images and labels from the dataset, converts them to numpy arrays,
+		and performs a stratified train-test split while preserving class distribution.
+
+		Args:
+			dataset: List of (image, label) pairs to be split
+
+		Returns:
+			A tuple containing (X_train, X_test, y_train, y_test) where:
+				- X_train: Training images (numpy array)
+				- X_test: Testing images (numpy array)
+				- y_train: Training labels (numpy array)
+				- y_test: Testing labels (numpy array)
+		"""
+		images, labels = zip(*dataset)
+
+		images_array = np.array(images)
+		labels_array = np.array(labels)
+
+
+		X_train, X_test, y_train, y_test = train_test_split(
+				images_array,
+				labels_array,
+				test_size=0.2,
+				random_state=0,
+				shuffle=True,
+				stratify=labels_array 
+		)
+
+		return X_train, X_test, y_train, y_test
