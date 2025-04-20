@@ -3,6 +3,7 @@ from typing import Any, List, Optional, Tuple
 
 import cv2
 import numpy as np
+from sklearn.model_selection import train_test_split
 
 
 class ImageProcessor:
@@ -99,14 +100,13 @@ class ImageProcessor:
 		images_array = np.array(images)
 		labels_array = np.array(labels)
 
-
 		X_train, X_test, y_train, y_test = train_test_split(
 				images_array,
 				labels_array,
 				test_size=0.2,
 				random_state=0,
 				shuffle=True,
-				stratify=labels_array 
+				stratify=labels_array
 		)
 
 		return X_train, X_test, y_train, y_test
