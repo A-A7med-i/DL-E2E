@@ -52,7 +52,7 @@ class BinaryClassificationModel:
 
         x = GlobalAveragePooling2D()(x)
 
-        x = Dense(64, activation="relu")(x)
+        x = Dense(256, activation="relu")(x)
 
         output_layer = Dense(1, activation="sigmoid")(x)
 
@@ -65,7 +65,7 @@ class BinaryClassificationModel:
         x_train: np.ndarray,
         y_train: np.ndarray,
         batch_size: int = 32,
-        epochs: int = 15,
+        epochs: int = 20,
         validation_split: float = 0.1,
     ) -> tf.keras.callbacks.History:
         """
