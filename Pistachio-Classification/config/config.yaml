@@ -2,3 +2,6 @@ data:
   path:
     base_dir: "/media/ahmed/Data/DL-E2E/Pistachio-Classification/data/raw/Pistachio_Image_Dataset"
     processed_dir: "/media/ahmed/Data/DL-E2E/Pistachio-Classification/data/processed"
+
+model:
+  path: "/media/ahmed/Data/DL-E2E/Pistachio-Classification/models/checkpoints/model.keras"
