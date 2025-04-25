@@ -5,7 +5,7 @@ VERSION = "0.0.0"
 AUTHOR = "Ahmed"
 REPO_NAME = "Pistachio-Classification"
 
-setup(
+setup(  
 		name=PROJECT_NAME,
 		version=VERSION,
 		author=AUTHOR,
